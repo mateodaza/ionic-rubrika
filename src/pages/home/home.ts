@@ -16,7 +16,7 @@ export class HomePage {
   	public alertCtrl: AlertController,
     public database: AngularFireDatabase
   ) {
-	this.tasksRef = this.database.list('tasks');
+    	this.tasksRef = this.database.list('tasks');
 	    this.tasks = this.tasksRef.snapshotChanges()
 	    .map(changes => {
 	      return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
